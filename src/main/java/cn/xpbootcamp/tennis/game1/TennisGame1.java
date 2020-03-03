@@ -28,7 +28,7 @@ public class TennisGame1 implements TennisGame {
         return playerName.equals("player1");
     }
 
-    public String getScore() {
+    public String showScoreOnBoard() {
         if (isDraw()) {
             return getScoreOfDraw();
         } else if (isOnePlayerMoreThanFour()) {
