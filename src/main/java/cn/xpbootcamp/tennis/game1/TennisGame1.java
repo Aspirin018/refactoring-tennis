@@ -15,10 +15,11 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (isPlayer1(playerName))
+        if (isPlayer1(playerName)) {
             score1 += 1;
-        else
+        } else {
             score2 += 1;
+        }
     }
 
     private boolean isPlayer1(String playerName) {
