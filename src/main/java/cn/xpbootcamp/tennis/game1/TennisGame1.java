@@ -76,7 +76,9 @@ public class TennisGame1 implements TennisGame {
         int dif = score1 - score2;
         if (Math.abs(dif) == 1) {
             score = "Advantage " + (score1 > score2 ? "player1" : "player2");
-        } else score = dif >= 2 ? "Win for player1" : "Win for player2";
+        } else {
+            score = "Win for " + (dif > 0 ? "player1" : "player2");
+        }
         return score;
     }
 
