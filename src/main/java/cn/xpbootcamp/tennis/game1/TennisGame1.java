@@ -72,15 +72,9 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreWithOnePlayerMoreThanFour() {
-        String score;
         int dif = score1 - score2;
         String winner = dif > 0 ? "player1" : "player2";
-        if (Math.abs(dif) == 1) {
-            score = "Advantage " + winner;
-        } else {
-            score = "Win for " + winner;
-        }
-        return score;
+        return (Math.abs(dif) == 1 ? "Advantage " : "Win for ") + winner;
     }
 
     private String getScoreOfDraw() {
