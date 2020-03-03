@@ -74,10 +74,11 @@ public class TennisGame1 implements TennisGame {
     private String getScoreWithOnePlayerMoreThanFour() {
         String score;
         int minusResult = score1 - score2;
-        if (minusResult == 1) score = "Advantage player1";
-        else if (minusResult == -1) score = "Advantage player2";
-        else if (minusResult >= 2) score = "Win for player1";
-        else score = "Win for player2";
+        if (minusResult == 1) {
+            score = "Advantage player1";
+        } else if (minusResult == -1) {
+            score = "Advantage player2";
+        } else score = minusResult >= 2 ? "Win for player1" : "Win for player2";
         return score;
     }
 
