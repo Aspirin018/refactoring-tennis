@@ -27,13 +27,17 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (score1 == score2) {
+        if (isDraw()) {
             return getScoreOfDraw();
         } else if (score1 >= 4 || score2 >= 4) {
             return getScoreWithOnePlayerMoreThanFour();
         } else {
             return getScoreWhenDifferentAndLessThanFour();
         }
+    }
+
+    private boolean isDraw() {
+        return score1 == score2;
     }
 
     private String getScoreWhenDifferentAndLessThanFour() {
