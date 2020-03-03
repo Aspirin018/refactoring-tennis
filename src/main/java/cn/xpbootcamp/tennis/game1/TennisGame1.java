@@ -30,21 +30,7 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         int tempScore = 0;
         if (score1 == score2) {
-            switch (score1) {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
-
-            }
+            score = getScoreOfDraw();
         } else if (score1 >= 4 || score2 >= 4) {
             int minusResult = score1 - score2;
             if (minusResult == 1) score = "Advantage player1";
@@ -73,6 +59,26 @@ public class TennisGame1 implements TennisGame {
                         break;
                 }
             }
+        }
+        return score;
+    }
+
+    private String getScoreOfDraw() {
+        String score;
+        switch (score1) {
+            case 0:
+                score = "Love-All";
+                break;
+            case 1:
+                score = "Fifteen-All";
+                break;
+            case 2:
+                score = "Thirty-All";
+                break;
+            default:
+                score = "Deuce";
+                break;
+
         }
         return score;
     }
