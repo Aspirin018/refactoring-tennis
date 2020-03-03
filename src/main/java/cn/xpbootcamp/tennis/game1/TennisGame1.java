@@ -28,7 +28,6 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         String score = "";
-        int tempScore = 0;
         if (score1 == score2) {
             score = getScoreOfDraw();
         } else if (score1 >= 4 || score2 >= 4) {
