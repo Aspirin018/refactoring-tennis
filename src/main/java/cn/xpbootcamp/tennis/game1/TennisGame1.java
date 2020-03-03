@@ -82,22 +82,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreOfDraw() {
-        String score;
-        switch (score1) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
-
-        }
-        return score;
+        String[] preScore = {"Love", "Fifteen", "Thirty"};
+        return score1 < 3 ? preScore[score1] + "-All" : "Deuce";
     }
 }
