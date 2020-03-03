@@ -4,6 +4,8 @@ import cn.xpbootcamp.tennis.TennisGame;
 
 public class TennisGame1 implements TennisGame {
 
+    private static final String[] scoreAlias = {"Love", "Fifteen", "Thirty", "Forty"};
+
     private int score1 = 0;
     private int score2 = 0;
     private String player1Name;
@@ -45,7 +47,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreWhenDifferentAndLessThanFour() {
-        String[] scoreAlias = {"Love", "Fifteen", "Thirty", "Forty"};
         return scoreAlias[score1] + "-" + scoreAlias[score2];
     }
 
@@ -56,7 +57,6 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String getScoreOfDraw() {
-        String[] preScore = {"Love", "Fifteen", "Thirty"};
-        return score1 < 3 ? preScore[score1] + "-All" : "Deuce";
+        return score1 < 3 ? scoreAlias[score1] + "-All" : "Deuce";
     }
 }
