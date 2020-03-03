@@ -27,7 +27,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        if (isDrawAndLessThanFour()) {
+        if (isDraw()) {
             return getScoreOfDraw();
         } else if (isOnePlayerMoreThanFour()) {
             return getScoreWithOnePlayerMoreThanFour();
@@ -40,7 +40,7 @@ public class TennisGame1 implements TennisGame {
         return score1 >= 4 || score2 >= 4;
     }
 
-    private boolean isDrawAndLessThanFour() {
+    private boolean isDraw() {
         return score1 == score2;
     }
 
