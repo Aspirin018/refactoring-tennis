@@ -24,10 +24,6 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private boolean isPlayer1(String playerName) {
-        return playerName.equals("player1");
-    }
-
     public String showScoreOnBoard() {
         if (isDraw()) {
             return getScoreOfDraw();
@@ -38,16 +34,20 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private boolean isOnePlayerMoreThanFour() {
-        return score1 >= 4 || score2 >= 4;
+    private boolean isPlayer1(String playerName) {
+        return playerName.equals("player1");
     }
 
     private boolean isDraw() {
         return score1 == score2;
     }
 
-    private String getScoreWhenDifferentAndLessThanFour() {
-        return scoreAlias[score1] + "-" + scoreAlias[score2];
+    private boolean isOnePlayerMoreThanFour() {
+        return score1 >= 4 || score2 >= 4;
+    }
+
+    private String getScoreOfDraw() {
+        return score1 < 3 ? scoreAlias[score1] + "-All" : "Deuce";
     }
 
     private String getScoreWithOnePlayerMoreThanFour() {
@@ -56,7 +56,7 @@ public class TennisGame1 implements TennisGame {
         return (Math.abs(dif) == 1 ? "Advantage " : "Win for ") + winner;
     }
 
-    private String getScoreOfDraw() {
-        return score1 < 3 ? scoreAlias[score1] + "-All" : "Deuce";
+    private String getScoreWhenDifferentAndLessThanFour() {
+        return scoreAlias[score1] + "-" + scoreAlias[score2];
     }
 }
